@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<xs:schema xmlns="http://activemq.example.org/custom/handler/v1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:bp="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           targetNamespace="http://activemq.example.org/custom/handler/v1.0"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           version="1.0.0">
+
+  <xs:import namespace="http://www.osgi.org/xmlns/blueprint/v1.0.0" />
+
+  <!-- Could define any element/type for complex plugin configuration, but as an -->
+  <!-- example let's piggy-back on the blueprint <bean>, similar to ARIES-1293. -->
+  <xs:element name="bean" type="bp:Tinlined-bean" />
+
+</xs:schema>
