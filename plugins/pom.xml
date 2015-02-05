@@ -35,6 +35,7 @@
 
   <modules>
     <module>custom-handler</module>
+    <module>custom-plugin</module>
   </modules>
 
 </project>

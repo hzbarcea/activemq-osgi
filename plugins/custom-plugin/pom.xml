@@ -26,30 +26,12 @@
     <version>1.0.0</version>
   </parent>
 
-  <artifactId>custom-handler</artifactId>
+  <artifactId>custom-plugin</artifactId>
   <packaging>bundle</packaging>
-  <name>ActiveMQ :: OSGi :: Plugins :: Custom Handler</name>
-  <description>Custom Blueprint Namespace Handler Example</description>
+  <name>ActiveMQ :: OSGi :: Plugins :: Custom Plugin</name>
+  <description>Custom ActiveMQ Plugin Example</description>
 
   <dependencies>
-    <dependency>
-      <groupId>org.example.activemq.osgi</groupId>
-      <artifactId>custom-plugin</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.aries.blueprint</groupId>
-      <artifactId>org.apache.aries.blueprint.api</artifactId>
-      <version>${blueprint-api.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.aries.blueprint</groupId>
-      <artifactId>blueprint-parser</artifactId>
-      <version>${blueprint-parser.version}</version>
-      <scope>provided</scope>
-    </dependency>
-
     <dependency>
       <groupId>org.apache.activemq</groupId>
       <artifactId>activemq-broker</artifactId>

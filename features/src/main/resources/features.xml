@@ -18,6 +18,7 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0" name='example-activemq-osgi-${project.version}'>
 
   <feature name='example-custom-handler' version='${project.version}' resolver='(obr)' start-level='50'>
+     <bundle>mvn:org.example.activemq.osgi/custom-plugin/${project.version}</bundle>
      <bundle>mvn:org.example.activemq.osgi/custom-handler/${project.version}</bundle>
   </feature>
 
