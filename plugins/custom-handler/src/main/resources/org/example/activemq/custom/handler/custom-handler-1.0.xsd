@@ -3,6 +3,7 @@
 <xs:schema xmlns="http://activemq.example.org/custom/handler/v1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:bp="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:tns="http://activemq.example.org/custom/handler/v1.0"
            targetNamespace="http://activemq.example.org/custom/handler/v1.0"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified"
@@ -14,4 +15,8 @@
   <!-- example let's piggy-back on the blueprint <bean>, similar to ARIES-1293. -->
   <xs:element name="bean" type="bp:Tinlined-bean" />
 
+  <xs:element name="metadataPlugin" type="tns:MetadataPluginType" />
+  <xs:complexType name="MetadataPluginType">
+    <xs:attribute name="sendTo" type="xs:string"/>
+  </xs:complexType>
 </xs:schema>

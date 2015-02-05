@@ -44,17 +44,18 @@ public class MetadataBrokerFilter extends BrokerFilter {
     public Destination addDestination(ConnectionContext context, ActiveMQDestination destination, boolean createIfTemporary) throws Exception {
         String dn = destination.getPhysicalName();
     	if (!AdvisorySupport.isAdvisoryTopic(destination)) {
-			MessageDigest digest = MessageDigest.getInstance("SHA-256");
-			byte[] hash = digest.digest(dn.getBytes("UTF-8"));
+            // This fictitious plugin sends metadata about new destinations to a 'store'
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(dn.getBytes("UTF-8"));
             LOGGER.info("Storing metadata: '{}' for destination '{}'.", DatatypeConverter.printBase64Binary(hash), dn);
         }
-        LOGGER.info("Adding destination: '{}'.", dn);
+        LOGGER.debug("Adding destination: '{}'.", dn);
         return super.addDestination(context, destination, createIfTemporary);
     }
 
     @Override
     public void removeDestination(ConnectionContext context, ActiveMQDestination destination, long timeout) throws Exception {
-        LOGGER.info("Removing destination: '{}'.", destination.getPhysicalName());
+        LOGGER.debug("Removing destination: '{}'.", destination.getPhysicalName());
         super.removeDestination(context, destination, timeout);
     }
 
